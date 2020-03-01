@@ -57,12 +57,13 @@ class Phrase {
 
         for(let i = 0; i < letters.length; i++)
         {
-            if(letter == letters[i].textContent)
+            if(letters[i].classList.contains(letter))
             {
-
+                letters[i].classList.replace("hide", "show");
             }
+            console.log(letters[i].classList.contains(letter))
         }
 
-        console.log(letters[0].textContent);
+        
     }
 }
