@@ -33,9 +33,6 @@ class Game {
     {
         document.getElementById("overlay").style.visibility = "hidden";
 
-        if(this.activePhrase != null)
-            this.reset();
-
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
@@ -151,6 +148,7 @@ class Game {
     gameOver(gameWon)
     {
         const overlay = document.getElementById("overlay");
+        const sound = document.createElement("audio");
 
         overlay.style.visibility = "visible";
 
@@ -158,11 +156,19 @@ class Game {
         {
             overlay.querySelector("h1").innerHTML = `A glorius victory<br>May Wepwawet guard you and your family`;
             overlay.classList.replace("start", "win");
+
+            sound.src = "sounds/win.mp3";
+            document.body.appendChild(sound);
+            sound.play();
         }
         else
         {
             overlay.querySelector("h1").textContent = "You brought shame upon your house :(";
             overlay.classList.replace("start", "lose");
+            
+            sound.src = "sounds/lose.mp3";
+            document.body.appendChild(sound);
+            sound.play();
         }
     }
 }
