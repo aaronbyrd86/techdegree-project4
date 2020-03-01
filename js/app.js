@@ -16,3 +16,8 @@ console.log(`Phrase ${index} - phrase: ${phrase.phrase}`);
  document.getElementById("btn__reset").addEventListener("click", event => {
     game.startGame();
  })
+
+ document.querySelector("#qwerty").addEventListener("click", event => {
+   if(event.target.className == "key")
+      game.handleInteraction(event.target);
+ })

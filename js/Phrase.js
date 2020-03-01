@@ -61,9 +61,6 @@ class Phrase {
             {
                 letters[i].classList.replace("hide", "show");
             }
-            console.log(letters[i].classList.contains(letter))
         }
-
-        
     }
 }
